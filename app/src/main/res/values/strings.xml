@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">WeatherApp</string>
+    <string name="refresh_label">Refresh</string>
+    <string name="add_new_area_label">Add New Area</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_area_add">AreaAddActivity</string>
+    <string name="save_label">Save</string>
+    <string name="current_location_name_label">Current Location Name</string>
+    <string name="current_area_name_label">Current Area Name</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="delete_label">Delete</string>
+    <string name="weather_label">Weather</string>
+    <string name="description_label">Description</string>
+    <string name="temperature_label">Temperature</string>
+    <string name="default_number_value">00</string>
+    <string name="humidity_label">Humidity</string>
+    <string name="pressure_label">Pressure</string>
+    <string name="wind_label">Wind</string>
+    <string name="speed_label">Speed</string>
+    <string name="degrees_label">Degrees</string>
+    <string name="cloud_label">Cloud</string>
+    <string name="percentage">%</string>
+    <string name="rainy_label">Rainy</string>
+    <string name="last_update_label">Last Update</string>
+
+
+    <string name="openWeatherAPI">52463e001ee7f06f2b216bdb992da4cd</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="configure">Configure</string>
+    <string name="add_widget">Add widget</string>
+
+</resources>
