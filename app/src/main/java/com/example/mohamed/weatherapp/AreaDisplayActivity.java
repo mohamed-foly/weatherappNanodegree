@@ -71,11 +71,11 @@ public class AreaDisplayActivity extends AppCompatActivity {
                 lastUpdateTV.setText(outputFormat.format(areaModel.getLastUpdate()));
                 rainyCB.setChecked(areaModel.isRainy());
             }else{
-                Toast.makeText(this, "Empty Area", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.error_empty_area, Toast.LENGTH_SHORT).show();
                 finish();
             }
         }else{
-            Toast.makeText(this, "Empty Bundle", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.error_empty_bundle, Toast.LENGTH_SHORT).show();
             finish();
         }
     }
@@ -89,7 +89,7 @@ public class AreaDisplayActivity extends AppCompatActivity {
             case R.id.action_delete:
                 DeleteAreaTask deleteAreaTask = new DeleteAreaTask(db);
                 deleteAreaTask.execute(areaModel);
-                Toast.makeText(this, "Delete", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.area_delete_success_msg, Toast.LENGTH_SHORT).show();
                 finish();
                 break;
             default:

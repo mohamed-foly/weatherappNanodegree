@@ -64,17 +64,15 @@ public class MainActivity extends AppCompatActivity implements AreaClickInterfac
         switch (item.getItemId()) {
 
             case R.id.action_refresh:
-                Toast.makeText(this, "Refresh", Toast.LENGTH_SHORT).show();
-                List<AreaModel> areaModels = areaListViewModel.getAreaModels().getValue();
-                //UpdateAreaTask updateAreaTask = new UpdateAreaTask(this.getApplication());
 
-                //updateAreaTask.execute(areaModels.get(1));
-                for (AreaModel a:areaModels
-                        ) {
-                    UpdateAreaTask updateAreaTask = new UpdateAreaTask(this.getApplication());
-                    updateAreaTask.execute(a);
-                    Log.e("AreaID",String.valueOf(a.id));
-                    Log.e("AreaName",a.getName());
+                List<AreaModel> areaModels = areaListViewModel.getAreaModels().getValue();
+                if (areaModels != null) {
+                    Toast.makeText(this, R.string.refresh_msg, Toast.LENGTH_SHORT).show();
+                    for (AreaModel a:areaModels
+                            ) {
+                        UpdateAreaTask updateAreaTask = new UpdateAreaTask(this.getApplication());
+                        updateAreaTask.execute(a);
+                    }
                 }
 
                 break;

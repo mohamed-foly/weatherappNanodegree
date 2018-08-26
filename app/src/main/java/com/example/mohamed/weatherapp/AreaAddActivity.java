@@ -11,7 +11,6 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -90,18 +89,16 @@ public class AreaAddActivity extends AppCompatActivity implements
 onMarkerDragListener = new GoogleMap.OnMarkerDragListener() {
             @Override
             public void onMarkerDragStart(Marker marker) {
-                Log.e("WeatherApp" , "MarkerDragStarted");
+
             }
 
             @Override
             public void onMarkerDrag(Marker marker) {
-                Log.e("WeatherApp" , "MarkerDrag");
+
             }
 
             @Override
             public void onMarkerDragEnd(Marker marker) {
-                Log.e("WeatherApp" , "MarkerDragEnd");
-
                 updateMarkerAreaName(marker.getPosition().latitude,marker.getPosition().longitude);
 
             }
@@ -122,8 +119,8 @@ onMarkerDragListener = new GoogleMap.OnMarkerDragListener() {
                 finish();
                 break;
             case R.id.action_save:
-  //              Toast.makeText(this, "Save", Toast.LENGTH_SHORT).show();
-//                Log.e("WeatherApp","Lat: "+String.valueOf(markerLat)+" Long:"+String.valueOf(markerLong));
+                Toast.makeText(this, R.string.area_add_success_msg, Toast.LENGTH_SHORT).show();
+
                 AreaModel areaModel = new AreaModel(markerAreaName,markerLat,markerLong,new Date());
                 AddNewArea addNewArea = new AddNewArea(appDatabase,this);
                 addNewArea.execute(areaModel);
@@ -166,8 +163,7 @@ onMarkerDragListener = new GoogleMap.OnMarkerDragListener() {
         }
     }
 
-    private GoogleMap.OnMyLocationButtonClickListener onMyLocationButtonClickListener =
-            new GoogleMap.OnMyLocationButtonClickListener() {
+    private GoogleMap.OnMyLocationButtonClickListener onMyLocationButtonClickListener = new GoogleMap.OnMyLocationButtonClickListener() {
                 @Override
                 public boolean onMyLocationButtonClick() {
 
@@ -235,13 +231,6 @@ private void   updateMarkerAreaName(double lat, double lng){
             List<Address> addresses = geocoder.getFromLocation(lat, lng, 1);
             String countryName = addresses.get(0).getCountryName();
             String cityName = addresses.get(0).getLocality();
-            if (countryName != null){
-                Log.e("WeatherApp", countryName);
-            }
-            if (cityName != null){
-                Log.e("WeatherApp", cityName);
-            }
-
 
             return countryName+", "+cityName;
         } catch (IOException e) {
@@ -266,9 +255,9 @@ private void   updateMarkerAreaName(double lat, double lng){
     @Override
     public void OnAreaAdded(Long Result) {
     if (Result > 0){
-        Toast.makeText(this, "Area Added Successfully", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, R.string.area_added_success_msg, Toast.LENGTH_SHORT).show();
     }else {
-        Toast.makeText(this, "Failed To Add Area", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, R.string.area_added_fail_msg, Toast.LENGTH_SHORT).show();
     }
 
 

@@ -28,5 +28,12 @@
     <string name="appwidget_text">EXAMPLE</string>
     <string name="configure">Configure</string>
     <string name="add_widget">Add widget</string>
+    <string name="area_added_success_msg">Area Added Successfully</string>
+    <string name="area_added_fail_msg">Failed To Add Area</string>
+    <string name="error_empty_bundle">Empty Bundle</string>
+    <string name="error_empty_area">Empty Area</string>
+    <string name="area_delete_success_msg">Deleted Successfully</string>
+    <string name="refresh_msg">Refresh Started</string>
+    <string name="area_add_success_msg">Saved Successfully</string>
 
 </resources>
